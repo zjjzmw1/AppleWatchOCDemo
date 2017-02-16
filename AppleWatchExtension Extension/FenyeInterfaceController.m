@@ -1,25 +1,27 @@
 //
-//  InterfaceController.m
-//  AppleWatchExtension Extension
+//  FenyeInterfaceController.m
+//  AppleWatchOCDemo
 //
 //  Created by zhangmingwei on 2017/2/16.
 //  Copyright © 2017年 SpeedX. All rights reserved.
 //
 
-#import "InterfaceController.h"
+#import "FenyeInterfaceController.h"
 
-
-@interface InterfaceController()
+@interface FenyeInterfaceController ()
 
 @end
 
-
-@implementation InterfaceController
+@implementation FenyeInterfaceController
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
+    
     // Configure interface objects here.
+    NSString *text = context;
+    [self.fenyLabel setText:[NSString stringWithFormat:@"我的内容是：%@",text]];
+    [self.fenyLabel setTextColor:[UIColor redColor]];
+    
 }
 
 - (void)willActivate {
@@ -32,22 +34,6 @@
     [super didDeactivate];
 }
 
-- (IBAction)fenyeAction {
-    
-    
-    [self pushControllerWithName:@"fenye_id" context:@"首页"];
-    
-}
-
-- (IBAction)listAction {
-    
-    NSArray *arr = [NSArray arrayWithObjects:@"row1",@"row2",@"row3",@"row4",@"row5",@"row6", nil];
-    [self presentControllerWithName:@"list_id" context:arr];
-    
-}
-
-- (IBAction)setAction {
-}
 @end
 
 

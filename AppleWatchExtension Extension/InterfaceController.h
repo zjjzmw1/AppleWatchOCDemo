@@ -11,4 +11,11 @@
 
 @interface InterfaceController : WKInterfaceController
 
+// 分页
+- (IBAction)fenyeAction;
+// 列表
+- (IBAction)listAction;
+// 设置
+- (IBAction)setAction;
+
 @end

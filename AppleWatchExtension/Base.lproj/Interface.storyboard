@@ -1,16 +1,89 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12106.1" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12027"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider=""/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <group width="1" alignment="left" id="Ucj-Mc-4a9">
+                            <items>
+                                <button width="65" alignment="left" title="分页" id="1Ms-kJ-0UP">
+                                    <connections>
+                                        <action selector="fenyeAction" destination="AgC-eL-Hgc" id="FyY-0p-OXj"/>
+                                    </connections>
+                                </button>
+                                <button width="82" alignment="left" title="列表" id="1KR-9k-PTu">
+                                    <connections>
+                                        <action selector="listAction" destination="AgC-eL-Hgc" id="SUo-OV-WAd"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" verticalAlignment="center" id="cyO-R6-zE4">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="设置" id="11L-eY-5h0">
+                                    <connections>
+                                        <action selector="setAction" destination="AgC-eL-Hgc" id="A5P-QQ-O2v"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="-556" y="-252"/>
+        </scene>
+        <!--分页-->
+        <scene sceneID="0hO-75-xnq">
+            <objects>
+                <controller identifier="fenye_id" title="分页" id="L1l-ak-fqd" customClass="FenyeInterfaceController">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="我是分页的label" textAlignment="center" numberOfLines="0" id="5KA-PM-DeB">
+                            <fontDescription key="font" type="system" pointSize="26"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="fenyLabel" destination="5KA-PM-DeB" id="R1Y-eJ-qS4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-344" y="-252"/>
+        </scene>
+        <!--列表-->
+        <scene sceneID="0WQ-Z1-djj">
+            <objects>
+                <controller identifier="list_id" title="列表" id="F6V-TF-9Mu" customClass="ListInterfaceController">
+                    <items>
+                        <table alignment="left" id="z7s-iw-4z5">
+                            <items>
+                                <tableRow identifier="TableRowController" id="91f-r7-mV0" customClass="TableRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="i3z-JI-Y4n">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="Oyi-rZ-yHG"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="tableLabel" destination="Oyi-rZ-yHG" id="YSO-a7-JUW"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="myTable" destination="z7s-iw-4z5" id="bEc-Bl-dhP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-145" y="-257"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,7 +104,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider=""/>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
